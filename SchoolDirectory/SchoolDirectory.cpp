@@ -11,8 +11,7 @@ using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
 
-void createUser(String^);
-void MarshalString(String^, std::string&);
+void userLogin(String^);
 
 enum dbtableValues {
 	Id = 0,
@@ -26,12 +25,12 @@ enum dbtableValues {
 int main(array<System::String ^> ^args)
 {
 	String^ connString = "Data Source=.\\SQLEXPRESS;Initial Catalog=LeopardDatabase;Integrated Security=True";
-	createUser(connString);
+	userLogin(connString);
 
     return 0;
 }
 
-void createUser(String^ connString) {
+void userLogin(String^ connString) {
 	int ID; 
 	String^ fName;
 	String^ lName;
@@ -39,24 +38,39 @@ void createUser(String^ connString) {
 	String^ pwd;
 	String^ eml;
 
+	String^ inputEml;
+	String^ inputPwd;
+	String^ userType = "admin";
+	
+	Console::WriteLine("Enter your email: ");
+	inputEml = Console::ReadLine();
+	Console::WriteLine("Enter your password: ");
+	inputPwd = Console::ReadLine();
+
 	try {
 		SqlConnection sqlConn(connString);
-		Console::WriteLine("Connecting to database...");
 		sqlConn.Open();
-		String^ sqlQuery = "SELECT * FROM admin WHERE Id = 30001;";
+		String^ sqlQuery = "SELECT * FROM " + userType + " WHERE email = @eml AND password = @pwd; ";
+
 		SqlCommand command(sqlQuery, % sqlConn);
+		command.Parameters->AddWithValue("@eml", inputEml);
+		command.Parameters->AddWithValue("@pwd", inputPwd);
+
 		SqlDataReader^ reader = command.ExecuteReader();
-		while (reader->Read()) {
+		if (reader->Read()) {
 			ID = reader->GetInt32(Id);
 			fName = reader->GetString(firstName);
 			lName = reader->GetString(lastName);
 			unqV = reader->GetString(uniqueVar);
 			pwd = reader->GetString(password);
 			eml = reader->GetString(email);
-		}
 
-		Admin currentUser(ID, fName, lName, pwd, eml, unqV);
-		currentUser.printCredentials();
+			Admin currentUser(ID, fName, lName, pwd, eml, unqV);
+			currentUser.printCredentials();
+		}
+		else {
+			Console::WriteLine("Email or password is incorrect.");
+		}
 
 		sqlConn.Close();
 	}
