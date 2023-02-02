@@ -1,29 +1,29 @@
-// Instructor.cpp
+// Student.cpp
 #include "pch.h"
-#include "Instructor.h"
+#include "Student.h"
 
 using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
 
 //CONSTRUCTOR
-Instructor::Instructor(int ID, String^ fName, String^ lName, String^ password, String^ email, String^ department)
+Student::Student(int ID, String^ fName, String^ lName, String^ password, String^ email, String^ gpa)
 	:User{ ID, fName, lName, password, email }
 {
-	this->Department = department;
+	this->GPA = gpa;
 }
 
-String^ Instructor::getDepartment() { return Department; }
+String^ Student::getGPA() { return GPA; }
 
-void Instructor::printCredentials() {
+void Student::printCredentials() {
 	Console::WriteLine("User Credentials");
 	Console::WriteLine("Name: " + getfName() + " " + getlName());
 	Console::WriteLine("ID: " + getId());
 	Console::WriteLine("Email: " + getEml());
-	Console::WriteLine("Department: " + getDepartment());
+	Console::WriteLine("GPA: " + getGPA());
 	Console::WriteLine("Password: " + getPwd());
 }
 
 //DESTRUCTOR
-Instructor::~Instructor()
+Student::~Student()
 {}

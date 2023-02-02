@@ -2,6 +2,7 @@
 #include "User.h"
 #include "Admin.h"
 #include "Instructor.h"
+#include "Student.h"
 
 #include <iostream>
 #include <stdio.h>
@@ -94,6 +95,10 @@ void userLogin(String^ connString, String^ userType) {
 			}
 			else if (userType == "instructor") {
 				Instructor currentUser(ID, fName, lName, pwd, eml, unqV);
+				currentUser.printCredentials();
+			}
+			else if (userType == "student") {
+				Student currentUser(ID, fName, lName, pwd, eml, unqV);
 				currentUser.printCredentials();
 			}
 		}
