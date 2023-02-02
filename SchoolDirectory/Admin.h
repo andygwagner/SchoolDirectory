@@ -19,6 +19,7 @@ public:
 	Admin(int, String^, String^, String^, String^, String^);
 
 	void printCredentials();
+	void adminMenu();
 
 	String^ getOffice();
 	void setOffice(String^);

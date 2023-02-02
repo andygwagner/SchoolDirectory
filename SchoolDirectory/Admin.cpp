@@ -25,6 +25,36 @@ void Admin::printCredentials() {
 	Console::WriteLine("Password: " + getPwd());
 }
 
+void Admin::adminMenu() {
+	int looper = 0;
+	char choice;
+	while (looper == 0) {
+		Console::WriteLine("------Menu------");
+		Console::WriteLine("s - Course Search");
+		Console::WriteLine("a - Add/Remove Courses (system)");
+		Console::WriteLine("u - Add/Remove User");
+		Console::WriteLine("l - Link/Unlink User to Course");
+		Console::WriteLine("p - Print User List");
+		Console::WriteLine("x - Log-out");
+		choice = Convert::ToChar(Console::ReadLine());
+		switch (choice) {
+		case 's':
+			break;
+		case 'a':
+			break;
+		case 'u':
+			break;
+		case 'l':
+			break;
+		case 'p':
+			break;
+		case 'x':
+			Console::WriteLine("Logging out...");
+			looper = 1;
+		}
+	}
+}
+
 //DESTRUCTOR
 Admin::~Admin()
 {}
