@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "User.h"
 #include "Admin.h"
+#include "Instructor.h"
 
 #include <iostream>
 #include <stdio.h>
