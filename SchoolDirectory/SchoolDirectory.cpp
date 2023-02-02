@@ -11,7 +11,7 @@ using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
 
-void userLogin(String^);
+void userLogin(String^, String^);
 
 enum dbtableValues {
 	Id = 0,
@@ -25,12 +25,27 @@ enum dbtableValues {
 int main(array<System::String ^> ^args)
 {
 	String^ connString = "Data Source=.\\SQLEXPRESS;Initial Catalog=LeopardDatabase;Integrated Security=True";
-	userLogin(connString);
+	Console::WriteLine("Choose user type: ");
+	Console::WriteLine("1: admin");
+	Console::WriteLine("2: instructor");
+	Console::WriteLine("3: student");
+	int userType = Convert::ToInt32(Console::ReadLine());
+	switch (userType) {
+	case 1:
+		userLogin(connString, "admin");
+		break;
+	case 2:
+		userLogin(connString, "instructor");
+		break;
+	case 3:
+		userLogin(connString, "student");
+		break;
+	};
 
     return 0;
 }
 
-void userLogin(String^ connString) {
+void userLogin(String^ connString, String^ userType) {
 	int ID; 
 	String^ fName;
 	String^ lName;
@@ -40,7 +55,6 @@ void userLogin(String^ connString) {
 
 	String^ inputEml;
 	String^ inputPwd;
-	String^ userType = "admin";
 	
 	Console::WriteLine("Enter your email: ");
 	inputEml = Console::ReadLine();
@@ -65,8 +79,13 @@ void userLogin(String^ connString) {
 			pwd = reader->GetString(password);
 			eml = reader->GetString(email);
 
-			Admin currentUser(ID, fName, lName, pwd, eml, unqV);
-			currentUser.printCredentials();
+			if (userType == "admin") {
+				Admin currentUser(ID, fName, lName, pwd, eml, unqV);
+				currentUser.printCredentials();
+			}
+			else {
+				Console::WriteLine("User is not admin");
+			}
 		}
 		else {
 			Console::WriteLine("Email or password is incorrect.");
