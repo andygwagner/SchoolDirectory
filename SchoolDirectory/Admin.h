@@ -21,6 +21,7 @@ public:
 	void printCredentials();
 
 	String^ getOffice();
+	void setOffice(String^);
 
 	//DESTRUCTOR
 	~Admin();

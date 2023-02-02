@@ -14,6 +14,7 @@ Instructor::Instructor(int ID, String^ fName, String^ lName, String^ password, S
 }
 
 String^ Instructor::getDepartment() { return Department; }
+void Instructor::setDepartment(String^ Dept) { Department = Dept; }
 
 void Instructor::printCredentials() {
 	Console::WriteLine("User Credentials");

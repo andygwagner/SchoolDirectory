@@ -14,6 +14,7 @@ Admin::Admin(int ID, String^ fName, String^ lName, String^ password, String^ ema
 }
 
 String^ Admin::getOffice() { return adOffice; }
+void Admin::setOffice(String^ Off) { adOffice = Off; }
 
 void Admin::printCredentials() {
 	Console::WriteLine("User Credentials");

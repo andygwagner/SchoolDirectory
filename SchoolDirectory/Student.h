@@ -21,6 +21,7 @@ public:
 	void printCredentials();
 
 	String^ getGPA();
+	void setGPA(String^);
 
 	//DESTRUCTOR
 	~Student();

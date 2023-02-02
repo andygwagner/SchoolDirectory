@@ -21,6 +21,7 @@ public:
 	void printCredentials();
 
 	String^ getDepartment();
+	void setDepartment(String^);
 
 	//DESTRUCTOR
 	~Instructor();

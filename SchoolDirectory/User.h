@@ -14,11 +14,18 @@ public:
 	//CONSTRUCTOR
 	User(int, String^, String^, String^, String^);
 
+	//GET FUNCTIONS
 	int getId();
 	String^ getfName();
 	String^ getlName();
 	String^ getPwd();
 	String^ getEml();
+
+	//SET FUNCTIONS
+	void setfName(String^);
+	void setlName(String^);
+	void setPwd(String^);
+	void setEml(String^);
 
 	//DESTRUCTOR
 	~User();

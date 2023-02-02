@@ -14,6 +14,7 @@ Student::Student(int ID, String^ fName, String^ lName, String^ password, String^
 }
 
 String^ Student::getGPA() { return GPA; }
+void Student::setGPA(String^ gpa) { GPA = gpa; }
 
 void Student::printCredentials() {
 	Console::WriteLine("User Credentials");
