@@ -25,23 +25,31 @@ enum dbtableValues {
 
 int main(array<System::String ^> ^args)
 {
+	int looper = 0;
 	String^ connString = "Data Source=.\\SQLEXPRESS;Initial Catalog=LeopardDatabase;Integrated Security=True";
-	Console::WriteLine("Choose user type: ");
-	Console::WriteLine("1: admin");
-	Console::WriteLine("2: instructor");
-	Console::WriteLine("3: student");
-	int userType = Convert::ToInt32(Console::ReadLine());
-	switch (userType) {
-	case 1:
-		userLogin(connString, "admin");
-		break;
-	case 2:
-		userLogin(connString, "instructor");
-		break;
-	case 3:
-		userLogin(connString, "student");
-		break;
-	};
+	while (looper == 0) {
+		Console::WriteLine("Choose user type: ");
+		Console::WriteLine("1: admin");
+		Console::WriteLine("2: instructor");
+		Console::WriteLine("3: student");
+		Console::WriteLine("0: quit");
+		int userType = Convert::ToInt32(Console::ReadLine());
+		switch (userType) {
+		case 1:
+			userLogin(connString, "admin");
+			break;
+		case 2:
+			userLogin(connString, "instructor");
+			break;
+		case 3:
+			userLogin(connString, "student");
+			break;
+		case 0:
+			Console::WriteLine("Closing Program...");
+			looper++;
+		};
+	}
+	
 
     return 0;
 }
@@ -84,8 +92,9 @@ void userLogin(String^ connString, String^ userType) {
 				Admin currentUser(ID, fName, lName, pwd, eml, unqV);
 				currentUser.printCredentials();
 			}
-			else {
-				Console::WriteLine("User is not admin");
+			else if (userType == "instructor") {
+				Instructor currentUser(ID, fName, lName, pwd, eml, unqV);
+				currentUser.printCredentials();
 			}
 		}
 		else {
