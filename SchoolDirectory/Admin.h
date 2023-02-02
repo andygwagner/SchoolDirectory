@@ -19,7 +19,8 @@ public:
 	Admin(int, String^, String^, String^, String^, String^);
 
 	void printCredentials();
-	void adminMenu();
+	void adminMenu(String^);
+	void printUsers(String^);
 
 	String^ getOffice();
 	void setOffice(String^);

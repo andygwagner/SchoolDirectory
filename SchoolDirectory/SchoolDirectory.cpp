@@ -89,9 +89,10 @@ void userLogin(String^ connString, String^ userType) {
 			pwd = reader->GetString(password);
 			eml = reader->GetString(email);
 
+			sqlConn.Close();
 			if (userType == "admin") {
 				Admin currentUser(ID, fName, lName, pwd, eml, unqV);
-				currentUser.printCredentials();
+				currentUser.adminMenu(connString);
 			}
 			else if (userType == "instructor") {
 				Instructor currentUser(ID, fName, lName, pwd, eml, unqV);
@@ -101,11 +102,14 @@ void userLogin(String^ connString, String^ userType) {
 				Student currentUser(ID, fName, lName, pwd, eml, unqV);
 				currentUser.printCredentials();
 			}
+			else {
+				Console::WriteLine("Email or password is incorrect.");
+			}
 		}
 		else {
 			Console::WriteLine("Email or password is incorrect.");
 		}
-
+		reader->Close();
 		sqlConn.Close();
 	}
 	catch (SqlException^ e) {

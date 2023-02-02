@@ -25,7 +25,7 @@ void Admin::printCredentials() {
 	Console::WriteLine("Password: " + getPwd());
 }
 
-void Admin::adminMenu() {
+void Admin::adminMenu(String^ connString) {
 	int looper = 0;
 	char choice;
 	while (looper == 0) {
@@ -35,6 +35,7 @@ void Admin::adminMenu() {
 		Console::WriteLine("u - Add/Remove User");
 		Console::WriteLine("l - Link/Unlink User to Course");
 		Console::WriteLine("p - Print User List");
+		Console::WriteLine("c - Print Credentials");
 		Console::WriteLine("x - Log-out");
 		choice = Convert::ToChar(Console::ReadLine());
 		switch (choice) {
@@ -47,12 +48,55 @@ void Admin::adminMenu() {
 		case 'l':
 			break;
 		case 'p':
+			printUsers(connString);
+			break;
+		case 'c':
+			printCredentials();
 			break;
 		case 'x':
 			Console::WriteLine("Logging out...");
 			looper = 1;
 		}
 	}
+}
+
+void Admin::printUsers(String^ connString) {
+	SqlConnection sqlConn(connString);
+	sqlConn.Open();
+
+	// Print all from admin table
+	String^ sqlQuery = "SELECT * FROM admin;";
+	SqlCommand commandA(sqlQuery, % sqlConn);
+	SqlDataReader^ reader = commandA.ExecuteReader();
+	while (reader->Read()) {
+		Console::WriteLine(reader->GetInt32(0));
+		Console::WriteLine(reader->GetString(1) + " " + reader->GetString(2));
+		Console::WriteLine(reader->GetString(5));
+	}
+	reader->Close();
+
+	// print all from instructor table
+	sqlQuery = "SELECT * FROM instructor;";
+	SqlCommand commandI(sqlQuery, % sqlConn);
+	reader = commandI.ExecuteReader();
+	while (reader->Read()) {
+		Console::WriteLine(reader->GetInt32(0));
+		Console::WriteLine(reader->GetString(1) + " " + reader->GetString(2));
+		Console::WriteLine(reader->GetString(5));
+	}
+	reader->Close();
+
+	// print all from student table
+	sqlQuery = "SELECT * FROM student;";
+	SqlCommand commandS(sqlQuery, % sqlConn);
+	reader = commandS.ExecuteReader();
+	while (reader->Read()) {
+		Console::WriteLine(reader->GetInt32(0));
+		Console::WriteLine(reader->GetString(1) + " " + reader->GetString(2));
+		Console::WriteLine(reader->GetString(5));
+	}
+	reader->Close();
+	sqlConn.Close();
 }
 
 //DESTRUCTOR
