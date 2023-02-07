@@ -6,15 +6,10 @@
 #include "Course.h"
 #include "CreateCourseList.h"
 
-#include <iostream>
-#include <stdio.h>
-#include <sstream>
-#include <string>
-#include <vector>
-
 using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
+using namespace System::Collections::Generic;
 
 void userLogin(String^, String^);
 
@@ -29,12 +24,12 @@ enum dbtableValues {
 
 int main(array<System::String ^> ^args)
 {
-	
+	List<Course^>^ courseList = gcnew List<Course^>();
 
 	int looper = 0;
 	String^ connString = "Data Source=.\\SQLEXPRESS;Initial Catalog=LeopardDatabase;Integrated Security=True";
 
-	create_courselist(connString);
+	createCourseList(/*courseList, */connString);
 
 	//while (looper == 0) {
 	//	Console::WriteLine("Choose user type: ");

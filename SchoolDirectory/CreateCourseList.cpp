@@ -4,8 +4,9 @@
 using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
+using namespace System::Collections::Generic;
 
-void create_courselist(String^ connString) {
+void createCourseList(/*List<Course^>^ courseList, */String^ connString) {
 	int i = 0;
 	const int CNum = 10;
 
@@ -46,11 +47,15 @@ void create_courselist(String^ connString) {
 			Year[i] = reader->GetString(10);
 			Credit[i] = reader->GetInt32(11);
 
-			/*Console::WriteLine(CRN[i] + " " + Title[i]);
+			/*Course^ temp = gcnew Course(CRN[i], Title[i], Department[i], lectureDays[i], lecStart[i], lecEnd[i], labDays[i], labStart[i], labEnd[i], Semester[i], Year[i], Credit[i]);
+			courseList->Add(temp);*/
+
+
+			Console::WriteLine(CRN[i] + " " + Title[i]);
 			Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
 			Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
 			Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
-			Console::WriteLine("--------------------------------------------------");*/
+			Console::WriteLine("--------------------------------------------------");
 
 			i++;
 		}
