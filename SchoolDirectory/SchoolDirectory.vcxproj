@@ -128,15 +128,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />
+    <ClInclude Include="Course.h" />
     <ClInclude Include="Instructor.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="CreateCourseList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Course.cpp" />
     <ClCompile Include="Instructor.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -147,6 +150,7 @@
     <ClCompile Include="SchoolDirectory.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="User.cpp" />
+    <ClCompile Include="CreateCourseList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
