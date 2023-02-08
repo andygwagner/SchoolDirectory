@@ -10,21 +10,21 @@ void createCourseList(String^ connString) {
 	int i = 0;
 	const int CNum = 10;
 
-	int CRN[CNum];
+	array<Int32>^ CRN = gcnew array<Int32>(CNum);
 	array<String^>^ Title = gcnew array<String^>(CNum);
 	array<String^>^ Department = gcnew array<String^>(CNum);
-	array<String^>^ lectureDays = gcnew array<String^>(CNum);
 
-	int lecStart[CNum];
-	int lecEnd[CNum];
+	array<String^>^ lectureDays = gcnew array<String^>(CNum);
+	array<Int32>^ lecStart = gcnew array<Int32>(CNum);
+	array<Int32>^ lecEnd = gcnew array<Int32>(CNum);
 
 	array<String^>^ labDays = gcnew array<String^>(CNum);
-	int labStart[CNum];
-	int labEnd[CNum];
+	array<Int32>^ labStart = gcnew array<Int32>(CNum);
+	array<Int32>^ labEnd = gcnew array<Int32>(CNum);
 
 	array<String^>^ Semester = gcnew array<String^>(CNum);
 	array<String^>^ Year = gcnew array<String^>(CNum);
-	int Credit[CNum];
+	array<Int32>^ Credit = gcnew array<Int32>(CNum);
 
 	List<Course^>^ courseList = gcnew List<Course^>();
 
