@@ -49,8 +49,8 @@ void createCourseList(String^ connString) {
 			Year[i] = reader->GetString(10);
 			Credit[i] = reader->GetInt32(11);
 
-			/*Course^ temp = gcnew Course(CRN[i], Title[i], Department[i], lectureDays[i], lecStart[i], lecEnd[i], labDays[i], labStart[i], labEnd[i], Semester[i], Year[i], Credit[i]);
-			courseList->Add(temp);*/
+			Course^ temp = gcnew Course(CRN[i], Title[i], Department[i], lectureDays[i], lecStart[i], lecEnd[i], labDays[i], labStart[i], labEnd[i], Semester[i], Year[i], Credit[i]);
+			courseList->Add(temp);
 
 			i++;
 		}
