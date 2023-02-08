@@ -6,7 +6,7 @@ using namespace System::Data;
 using namespace System::Data::SqlClient;
 using namespace System::Collections::Generic;
 
-void createCourseList(/*List<Course^>^ courseList, */String^ connString) {
+void createCourseList(String^ connString) {
 	int i = 0;
 	const int CNum = 10;
 
@@ -25,6 +25,8 @@ void createCourseList(/*List<Course^>^ courseList, */String^ connString) {
 	array<String^>^ Semester = gcnew array<String^>(CNum);
 	array<String^>^ Year = gcnew array<String^>(CNum);
 	int Credit[CNum];
+
+	List<Course^>^ courseList = gcnew List<Course^>();
 
 	try {
 		SqlConnection sqlConn(connString);
@@ -50,13 +52,6 @@ void createCourseList(/*List<Course^>^ courseList, */String^ connString) {
 			/*Course^ temp = gcnew Course(CRN[i], Title[i], Department[i], lectureDays[i], lecStart[i], lecEnd[i], labDays[i], labStart[i], labEnd[i], Semester[i], Year[i], Credit[i]);
 			courseList->Add(temp);*/
 
-
-			Console::WriteLine(CRN[i] + " " + Title[i]);
-			Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
-			Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
-			Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
-			Console::WriteLine("--------------------------------------------------");
-
 			i++;
 		}
 		reader->Close();
@@ -64,5 +59,13 @@ void createCourseList(/*List<Course^>^ courseList, */String^ connString) {
 	}
 	catch (SqlException^ e) {
 		Console::WriteLine("Failed to connect to database");
+	}
+
+	for (int i = 0; i < CNum; i++) {
+		Console::WriteLine(CRN[i] + " " + Title[i]);
+		Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
+		Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
+		Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
+		Console::WriteLine("--------------------------------------------------");
 	}
 }

@@ -29,7 +29,7 @@ int main(array<System::String ^> ^args)
 	int looper = 0;
 	String^ connString = "Data Source=.\\SQLEXPRESS;Initial Catalog=LeopardDatabase;Integrated Security=True";
 
-	createCourseList(/*courseList, */connString);
+	createCourseList(connString);
 
 	//while (looper == 0) {
 	//	Console::WriteLine("Choose user type: ");
