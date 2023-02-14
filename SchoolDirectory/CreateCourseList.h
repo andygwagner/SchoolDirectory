@@ -8,6 +8,10 @@ using namespace System::Data;
 using namespace System::Data::SqlClient;
 using namespace System::Collections::Generic;
 
-void createCourseList(String^);
+ref class CourseList {
+	CourseList();
+	~CourseList();
 
+	void createCourseList(String^);
+};
 #endif
