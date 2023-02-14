@@ -10,6 +10,7 @@ Course::Course(int CRN, String^ courseName, String^ department, String^ lecDays,
 		ss{ semester }, sy{ year }, cc{ credits }
 	{}
 
+//SET FUNCTIONS
 void Course::setCRN(int newCRN) { crn = newCRN; }
 void Course::setTitle(String^ newTitle) { nam = newTitle; }
 void Course::setDep(String^ newDep) { dep = newDep; }
@@ -25,6 +26,23 @@ void Course::setLabE(int newLabE) { labe = newLabE; }
 void Course::setSem(String^ newSemester) { ss = newSemester; }
 void Course::setYear(String^ newYear) { sy = newYear; }
 void Course::setCredit(int newCredit) { cc = newCredit; }
+
+//GET FUNCTIONS
+int Course::getCRN() { return crn; }
+String^ Course::getTitle() { return nam; }
+String^ Course::getDep() { return dep; }
+
+String^ Course::getLecD() { return lecd; }
+int Course::getLecS() { return lecs; }
+int Course::getLecE() { return lece; }
+
+String^ Course::getLabD() { return labd; }
+int Course::getLabS() { return labs; }
+int Course::getLabE() { return labe; }
+
+String^ Course::getSem() { return ss; }
+String^ Course::getYear() { return sy; }
+int Course::getCredit() { return cc; }
 
 //DESTRUCTOR
 Course::~Course() {}

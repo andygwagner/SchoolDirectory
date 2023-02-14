@@ -29,6 +29,20 @@ public:
 	void setYear(String^);
 	void setCredit(int);
 
+	//GET FUNCTIONS
+	int getCRN();
+	String^ getTitle();
+	String^ getDep();
+	String^ getLecD();
+	int getLecS();
+	int getLecE();
+	String^ getLabD();
+	int getLabS();
+	int getLabE();
+	String^ getSem();
+	String^ getYear();
+	int getCredit();
+
 private:
 	int crn;
 	String^ nam;
