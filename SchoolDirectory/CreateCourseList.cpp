@@ -1,6 +1,6 @@
-#include "CreateCourseList.h"
 #include "pch.h"
 #include "CreateCourseList.h"
+#include "Course.h"
 
 using namespace std;
 
@@ -10,6 +10,7 @@ CourseList::~CourseList(){}
 void CourseList::createCourseList(String^ connString) {
 	int i = 0;
 	const int CNum = 10;
+	Course temp(0,"","","",0,0,"",0,0,"","",0);
 
 	array<Int32>^ CRN = gcnew array<Int32>(CNum);
 	array<String^>^ Title = gcnew array<String^>(CNum);
@@ -57,12 +58,16 @@ void CourseList::createCourseList(String^ connString) {
 		Console::WriteLine("Failed to connect to database");
 	}
 
-	for (int i = 0; i < CNum; i++) {
-		Console::WriteLine(CRN[i] + " " + Title[i]);
-		Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
-		Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
-		Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
-		Console::WriteLine("--------------------------------------------------");
-	}
+	//for (int i = 0; i < CNum; i++) {
+
+	//}
+
+	//for (int i = 0; i < CNum; i++) {
+	//	Console::WriteLine(CRN[i] + " " + Title[i]);
+	//	Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
+	//	Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
+	//	Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
+	//	Console::WriteLine("--------------------------------------------------");
+	//}
 
 }

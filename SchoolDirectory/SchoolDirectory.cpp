@@ -12,9 +12,10 @@
 int main(array<System::String ^> ^args)
 {
 	Login tryLog;
-	
+
 	String^ connString = "Data Source=.\\SQLEXPRESS;Initial Catalog=LeopardDatabase;Integrated Security=True";
 	String^ userType = tryLog.checkUserType(connString);
+
 	if (userType != "") {
 		tryLog.userLogin(connString, userType);
 	}
