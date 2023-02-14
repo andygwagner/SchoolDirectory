@@ -10,24 +10,38 @@ using namespace System::Collections::Generic;
 ref class Course {
 public:
 	// CONSTRUCTOR
-	Course(Int32, String^, String^, String^, Int32, Int32, String^, Int32, Int32, String^, String^, Int32);
+	Course(int, String^, String^, String^, int, int, String^, int, int, String^, String^, int);
 
 	//DESTRUCTOR
 	~Course();
 
+	//SET FUNCTIONS
+	void setCRN(int);
+	void setTitle(String^);
+	void setDep(String^);
+	void setLecD(String^);
+	void setLecS(int);
+	void setLecE(int);
+	void setLabD(String^);
+	void setLabS(int);
+	void setLabE(int);
+	void setSem(String^);
+	void setYear(String^);
+	void setCredit(int);
+
 private:
-	Int32 crn;
+	int crn;
 	String^ nam;
 	String^ dep;
 	String^ lecd;
-	Int32 lecs;
-	Int32 lece;
+	int lecs;
+	int lece;
 	String^ labd;
-	Int32 labs;
-	Int32 labe;
+	int labs;
+	int labe;
 	String^ ss;
 	String^ sy;
-	Int32 cc;
+	int cc;
 };
 
 #endif
