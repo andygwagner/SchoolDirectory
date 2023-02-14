@@ -135,6 +135,7 @@
     <ClInclude Include="Student.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="CreateCourseList.h" />
+    <ClInclude Include="Login.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Admin.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="CreateCourseList.cpp" />
+    <ClCompile Include="Login.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />

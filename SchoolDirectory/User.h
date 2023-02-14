@@ -1,13 +1,10 @@
 #ifndef USER_H
 #define USER_H
 
-#include <iostream>
-#include <sstream>
-#include <string>
-
 using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
+using namespace System::Collections::Generic;
 
 ref class User {
 public:
@@ -37,5 +34,6 @@ private:
 	String^ password;
 	String^ email;
 };
+
 
 #endif

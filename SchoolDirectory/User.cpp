@@ -2,12 +2,8 @@
 #include "pch.h"
 #include "User.h"
 
-using namespace System;
-using namespace System::Data;
-using namespace System::Data::SqlClient;
-
 User::User(int ID, String^ fName, String^ lName, String^ pwd, String^ eml)
-	:userID{ ID }, firstName{ fName }, lastName{ lName }, password{pwd}, email{eml}
+	:userID{ ID }, firstName{ fName }, lastName{ lName }, password{ pwd }, email{ eml }
 {
 	/*cout << "Constructor called for User" << endl;*/
 }

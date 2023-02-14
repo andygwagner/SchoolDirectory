@@ -2,10 +2,6 @@
 #include "pch.h"
 #include "Student.h"
 
-using namespace System;
-using namespace System::Data;
-using namespace System::Data::SqlClient;
-
 //CONSTRUCTOR
 Student::Student(int ID, String^ fName, String^ lName, String^ password, String^ email, String^ gpa)
 	:User{ ID, fName, lName, password, email }

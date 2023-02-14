@@ -2,12 +2,8 @@
 #include "pch.h"
 #include "Admin.h"
 
-using namespace System;
-using namespace System::Data;
-using namespace System::Data::SqlClient;
-
 //CONSTRUCTOR
-Admin::Admin(int ID, String^ fName, String^ lName, String^ password, String^ email, String^ office)
+Admin::Admin(int ID, String^ fName, String^ lName, String^ password, String^ email,String^ office)
 	:User{ ID, fName, lName, password, email }
 {
 	this->adOffice = office;
@@ -102,3 +98,5 @@ void Admin::printUsers(String^ connString) {
 //DESTRUCTOR
 Admin::~Admin()
 {}
+	
+

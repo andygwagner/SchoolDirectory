@@ -2,10 +2,6 @@
 #include "pch.h"
 #include "Instructor.h"
 
-using namespace System;
-using namespace System::Data;
-using namespace System::Data::SqlClient;
-
 //CONSTRUCTOR
 Instructor::Instructor(int ID, String^ fName, String^ lName, String^ password, String^ email, String^ department)
 	:User{ ID, fName, lName, password, email }
