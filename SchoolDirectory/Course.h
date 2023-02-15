@@ -43,6 +43,8 @@ public:
 	String^ getYear();
 	int getCredit();
 
+	void printCourseInformation();
+
 private:
 	int crn;
 	String^ nam;

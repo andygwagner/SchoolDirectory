@@ -44,5 +44,13 @@ String^ Course::getSem() { return ss; }
 String^ Course::getYear() { return sy; }
 int Course::getCredit() { return cc; }
 
+void Course::printCourseInformation() {
+	Console::WriteLine(crn + " " + nam);
+	Console::WriteLine(dep + " " + ss + " " + sy + " Credit: " + cc);
+	Console::WriteLine("Lecture: " + lecd + " " + lecs + "-" + lece);
+	Console::WriteLine("Lab: " + labd + " " + labs + "-" + labe);
+	Console::WriteLine("--------------------------------------------------");
+}
+
 //DESTRUCTOR
 Course::~Course() {}
