@@ -8,7 +8,6 @@ CourseList::~CourseList(){}
 
 void CourseList::createCourseList(String^ connString) {
 	int i = 0;
-
 	try {
 		SqlConnection sqlConn(connString);
 		sqlConn.Open();
@@ -39,20 +38,17 @@ void CourseList::createCourseList(String^ connString) {
 		Console::WriteLine("Failed to connect to database");
 	}
 
-	/*System::Collections::Hashtable^ courseList = gcnew System::Collections::Hashtable();*/
+	/*Hashtable^ courseList = gcnew Hashtable();*/
 	Course temp(CRN[0], Title[0], Department[0], lectureDays[0], lecStart[0], lecEnd[0], labDays[0], labStart[0], labEnd[0], Semester[0], Year[0], Credit[0]);
 	temp.printCourseInformation();
-
-	//for (int i = 0; i < CNum; i++) {
-	//	Console::WriteLine(CRN[i] + " " + Title[i]);
-	//	Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
-	//	Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
-	//	Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
-	//	Console::WriteLine("--------------------------------------------------");
-	//}
-
 }
 
 void CourseList::printCourseList() {
-
+	for (int i = 0; i < CNum; i++) {
+	Console::WriteLine(CRN[i] + " " + Title[i]);
+	Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
+	Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
+	Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
+	Console::WriteLine("--------------------------------------------------");
+}
 }
