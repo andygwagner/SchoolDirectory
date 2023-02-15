@@ -64,7 +64,7 @@ void Login::userLogin(String^ connString, String^ userType) {
 			}
 			else if (userType == "student") {
 				Student currentUser(ID, fName, lName, pwd, eml, unqV);
-				currentUser.printCredentials();
+				currentUser.studentMenu(connString);
 			}
 			else {
 				Console::WriteLine("Email or password is incorrect.");

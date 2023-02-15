@@ -11,6 +11,7 @@ public:
 	Student(int, String^, String^, String^, String^, String^);
 
 	void printCredentials();
+	void studentMenu(String^);
 
 	String^ getGPA();
 	void setGPA(String^);
