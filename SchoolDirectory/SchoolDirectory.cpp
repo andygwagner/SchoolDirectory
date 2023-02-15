@@ -13,8 +13,8 @@ int main(array<System::String ^> ^args)
 
 	/*tryCourseList.createCourseList(connString);
 	tryCourseList.printCourseList();*/
-	String^ userType = tryLog.checkUserType(connString);
 
+	String^ userType = tryLog.checkUserType(connString);
 	if (userType != "") {
 		tryLog.userLogin(connString, userType);
 	}

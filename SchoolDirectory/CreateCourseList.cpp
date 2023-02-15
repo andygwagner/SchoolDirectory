@@ -37,10 +37,6 @@ void CourseList::createCourseList(String^ connString) {
 	catch (SqlException^ e) {
 		Console::WriteLine("Failed to connect to database");
 	}
-
-	/*Hashtable^ courseList = gcnew Hashtable();*/
-	Course temp(CRN[0], Title[0], Department[0], lectureDays[0], lecStart[0], lecEnd[0], labDays[0], labStart[0], labEnd[0], Semester[0], Year[0], Credit[0]);
-	temp.printCourseInformation();
 }
 
 void CourseList::printCourseList() {
@@ -50,5 +46,5 @@ void CourseList::printCourseList() {
 	Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
 	Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
 	Console::WriteLine("--------------------------------------------------");
-}
+	}
 }
