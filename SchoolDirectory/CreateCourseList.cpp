@@ -6,7 +6,7 @@
 CourseList::CourseList(){}
 CourseList::~CourseList(){}
 
-void CourseList::createCourseList(String^ connString) {
+void CourseList::loadCourseValues(String^ connString) {
 	int i = 0;
 	try {
 		SqlConnection sqlConn(connString);
@@ -41,10 +41,10 @@ void CourseList::createCourseList(String^ connString) {
 
 void CourseList::printCourseList() {
 	for (int i = 0; i < CNum; i++) {
-	Console::WriteLine(CRN[i] + " " + Title[i]);
-	Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
-	Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
-	Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
-	Console::WriteLine("--------------------------------------------------");
+		Console::WriteLine(CRN[i] + " " + Title[i]);
+		Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
+		Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
+		Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
+		Console::WriteLine("--------------------------------------------------");
 	}
 }

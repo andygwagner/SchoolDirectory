@@ -11,8 +11,8 @@ int main(array<System::String ^> ^args)
 
 	String^ connString = "Data Source=.\\SQLEXPRESS;Initial Catalog=LeopardDatabase;Integrated Security=True";
 
-	/*tryCourseList.createCourseList(connString);
-	tryCourseList.printCourseList();*/
+	tryCourseList.loadCourseValues(connString);
+	tryCourseList.printCourseList();
 
 	String^ userType = tryLog.checkUserType(connString);
 	if (userType != "") {

@@ -13,7 +13,7 @@ ref class CourseList {
 public:
 	CourseList();
 	~CourseList();
-	void createCourseList(String^);
+	void loadCourseValues(String^);
 	void printCourseList();
 private:
 	int CNum = 10;
