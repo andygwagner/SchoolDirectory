@@ -1,33 +1,13 @@
 #include "pch.h"
 #include "CreateCourseList.h"
 #include "Course.h"
-#include <cliext/list>
+
 
 CourseList::CourseList(){}
 CourseList::~CourseList(){}
 
 void CourseList::createCourseList(String^ connString) {
 	int i = 0;
-	const int CNum = 10;
-	/*Course temp(0,"","","",0,0,"",0,0,"","",0); 
-	cliext::list<Course> classlist;*/
-	//array<Course^>^ classList = gcnew array<Course^>(CNum);
-
-	array<Int32>^ CRN = gcnew array<Int32>(CNum);
-	array<String^>^ Title = gcnew array<String^>(CNum);
-	array<String^>^ Department = gcnew array<String^>(CNum);
-
-	array<String^>^ lectureDays = gcnew array<String^>(CNum);
-	array<Int32>^ lecStart = gcnew array<Int32>(CNum);
-	array<Int32>^ lecEnd = gcnew array<Int32>(CNum);
-
-	array<String^>^ labDays = gcnew array<String^>(CNum);
-	array<Int32>^ labStart = gcnew array<Int32>(CNum);
-	array<Int32>^ labEnd = gcnew array<Int32>(CNum);
-
-	array<String^>^ Semester = gcnew array<String^>(CNum);
-	array<String^>^ Year = gcnew array<String^>(CNum);
-	array<Int32>^ Credit = gcnew array<Int32>(CNum);
 
 	try {
 		SqlConnection sqlConn(connString);
@@ -59,20 +39,9 @@ void CourseList::createCourseList(String^ connString) {
 		Console::WriteLine("Failed to connect to database");
 	}
 
-	//for (int i = 0; i < CNum; i++) {
-	//	temp.setCRN(CRN[i]);
-	//	temp.setTitle(Title[i]);
-	//	temp.setDep(Department[i]);
-	//	temp.setLecD(lectureDays[i]);
-	//	temp.setLecS(lecStart[i]);
-	//	temp.setLecE(lecEnd[i]);
-	//	temp.setLabD(labDays[i]);
-	//	temp.setLabS(labStart[i]);
-	//	temp.setLabE(labEnd[i]);
-	//	temp.setSem(Semester[i]);
-	//	temp.setYear(Year[i]);
-	//	temp.setCredit(Credit[i]);
-	//}
+	/*System::Collections::Hashtable^ courseList = gcnew System::Collections::Hashtable();*/
+	Course temp(CRN[0], Title[0], Department[0], lectureDays[0], lecStart[0], lecEnd[0], labDays[0], labStart[0], labEnd[0], Semester[0], Year[0], Credit[0]);
+	temp.printCourseInformation();
 
 	//for (int i = 0; i < CNum; i++) {
 	//	Console::WriteLine(CRN[i] + " " + Title[i]);
