@@ -21,6 +21,35 @@ void Instructor::printCredentials() {
 	Console::WriteLine("Password: " + getPwd());
 }
 
+void Instructor::instructMenu(String^ connString) {
+	int looper = 0;
+	char choice;
+	while (looper == 0) {
+		Console::WriteLine("-------------Menu-------------");
+		Console::WriteLine("s - Course Search");
+		Console::WriteLine("r - Course Roster");
+		Console::WriteLine("p - Print Schedule");
+		Console::WriteLine("c - Print Credentials");
+		Console::WriteLine("x - Log-out");
+		choice = Convert::ToChar(Console::ReadLine());
+
+		switch (choice) {
+		case 's':
+			break;
+		case 'r':
+			break;
+		case 'p':
+			break;
+		case 'c':
+			printCredentials();
+			break;
+		case 'x':
+			Console::WriteLine("Logging out...");
+			looper = 1;
+		}
+	}
+}
+
 //DESTRUCTOR
 Instructor::~Instructor()
 {}

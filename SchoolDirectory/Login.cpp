@@ -19,7 +19,7 @@ Login::Login() {}
 Login::~Login() {}
 
 void Login::userLogin(String^ connString, String^ userType) {
-	Console::WriteLine("Login User In");
+	Console::WriteLine("-------------Login-------------");
 	int ID;
 	String^ fName;
 	String^ lName;
@@ -60,7 +60,7 @@ void Login::userLogin(String^ connString, String^ userType) {
 			}
 			else if (userType == "instructor") {
 				Instructor currentUser(ID, fName, lName, pwd, eml, unqV);
-				currentUser.printCredentials();
+				currentUser.instructMenu(connString);
 			}
 			else if (userType == "student") {
 				Student currentUser(ID, fName, lName, pwd, eml, unqV);

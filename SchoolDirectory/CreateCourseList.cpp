@@ -1,8 +1,7 @@
 #include "pch.h"
 #include "CreateCourseList.h"
 #include "Course.h"
-
-using namespace std;
+#include <cliext/list>
 
 CourseList::CourseList(){}
 CourseList::~CourseList(){}
@@ -10,7 +9,9 @@ CourseList::~CourseList(){}
 void CourseList::createCourseList(String^ connString) {
 	int i = 0;
 	const int CNum = 10;
-	Course temp(0,"","","",0,0,"",0,0,"","",0);
+	/*Course temp(0,"","","",0,0,"",0,0,"","",0); 
+	cliext::list<Course> classlist;*/
+	//array<Course^>^ classList = gcnew array<Course^>(CNum);
 
 	array<Int32>^ CRN = gcnew array<Int32>(CNum);
 	array<String^>^ Title = gcnew array<String^>(CNum);
@@ -59,7 +60,18 @@ void CourseList::createCourseList(String^ connString) {
 	}
 
 	//for (int i = 0; i < CNum; i++) {
-
+	//	temp.setCRN(CRN[i]);
+	//	temp.setTitle(Title[i]);
+	//	temp.setDep(Department[i]);
+	//	temp.setLecD(lectureDays[i]);
+	//	temp.setLecS(lecStart[i]);
+	//	temp.setLecE(lecEnd[i]);
+	//	temp.setLabD(labDays[i]);
+	//	temp.setLabS(labStart[i]);
+	//	temp.setLabE(labEnd[i]);
+	//	temp.setSem(Semester[i]);
+	//	temp.setYear(Year[i]);
+	//	temp.setCredit(Credit[i]);
 	//}
 
 	//for (int i = 0; i < CNum; i++) {
@@ -69,5 +81,9 @@ void CourseList::createCourseList(String^ connString) {
 	//	Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
 	//	Console::WriteLine("--------------------------------------------------");
 	//}
+
+}
+
+void CourseList::printCourseList() {
 
 }

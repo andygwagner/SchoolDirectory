@@ -25,7 +25,7 @@ void Admin::adminMenu(String^ connString) {
 	int looper = 0;
 	char choice;
 	while (looper == 0) {
-		Console::WriteLine("------Menu------");
+		Console::WriteLine("-------------Menu-------------");
 		Console::WriteLine("s - Course Search");
 		Console::WriteLine("a - Add/Remove Courses (system)");
 		Console::WriteLine("u - Add/Remove User");

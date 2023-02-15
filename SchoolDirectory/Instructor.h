@@ -11,6 +11,7 @@ public:
 	Instructor(int, String^, String^, String^, String^, String^);
 
 	void printCredentials();
+	void instructMenu(String^);
 
 	String^ getDepartment();
 	void setDepartment(String^);
