@@ -17,6 +17,8 @@ public:
 	void loadCourseValues(String^);
 	void printCourseList();
 	void searchbyCRN(int);
+	void searchbyTitle(String^);
+
 private:
 	int CNum = 10;
 

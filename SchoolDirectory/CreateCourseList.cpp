@@ -60,3 +60,15 @@ void CourseList::searchbyCRN(int crn) {
 		}
 	}
 }
+
+void CourseList::searchbyTitle(String^ title) {
+	for (int i = 0; i < CNum; i++) {
+		if (Title[i] == title) {
+			Console::WriteLine(CRN[i] + " " + Title[i]);
+			Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
+			Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
+			Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
+			Console::WriteLine("--------------------------------------------------");
+		}
+	}
+}

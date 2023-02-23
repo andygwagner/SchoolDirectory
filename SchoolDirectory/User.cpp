@@ -28,6 +28,7 @@ void User::searchCourse(String^ connString) {
 	char choice;
 	int looper = 0;
 	int searchCRN;
+	String^ searchTitle;
 
 	while (looper == 0) {
 		Console::WriteLine("------Course Search------");
@@ -47,6 +48,9 @@ void User::searchCourse(String^ connString) {
 			tryCourseList.searchbyCRN(searchCRN);
 			break;
 		case 't':
+			Console::WriteLine("Enter Title: ");
+			searchTitle = Console::ReadLine();
+			tryCourseList.searchbyTitle(searchTitle);
 			break;
 		case 'x':
 			looper++;
