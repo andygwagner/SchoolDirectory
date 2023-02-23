@@ -34,7 +34,7 @@ void Student::studentMenu(String^ connString) {
 		choice = Convert::ToChar(Console::ReadLine());
 		switch (choice) {
 		case 's':
-			searchCourse();
+			searchCourse(connString);
 			break;
 		case 'a':
 			break;

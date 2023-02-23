@@ -48,3 +48,15 @@ void CourseList::printCourseList() {
 		Console::WriteLine("--------------------------------------------------");
 	}
 }
+
+void CourseList::searchbyCRN(int crn) {
+	for (int i = 0; i < CNum; i++) {
+		if (CRN[i] == crn) {
+			Console::WriteLine(CRN[i] + " " + Title[i]);
+			Console::WriteLine(Department[i] + " " + Semester[i] + " " + Year[i] + " Credit: " + Credit[i]);
+			Console::WriteLine("Lecture: " + lectureDays[i] + " " + lecStart[i] + "-" + lecEnd[i]);
+			Console::WriteLine("Lab: " + labDays[i] + " " + labStart[i] + "-" + labEnd[i]);
+			Console::WriteLine("--------------------------------------------------");
+		}
+	}
+}

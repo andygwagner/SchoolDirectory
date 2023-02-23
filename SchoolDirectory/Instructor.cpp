@@ -35,7 +35,7 @@ void Instructor::instructMenu(String^ connString) {
 
 		switch (choice) {
 		case 's':
-			searchCourse();
+			searchCourse(connString);
 			break;
 		case 'r':
 			break;

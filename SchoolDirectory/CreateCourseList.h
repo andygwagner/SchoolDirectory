@@ -13,8 +13,10 @@ ref class CourseList {
 public:
 	CourseList();
 	~CourseList();
+
 	void loadCourseValues(String^);
 	void printCourseList();
+	void searchbyCRN(int);
 private:
 	int CNum = 10;
 

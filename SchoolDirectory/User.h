@@ -27,7 +27,7 @@ public:
 	void setEml(String^);
 
 	//User Functions
-	void searchCourse();
+	void searchCourse(String^);
 
 	//DESTRUCTOR
 	~User();
