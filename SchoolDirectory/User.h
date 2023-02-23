@@ -1,6 +1,8 @@
 #ifndef USER_H
 #define USER_H
 
+#include "CreateCourseList.h"
+
 using namespace System;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
@@ -24,6 +26,9 @@ public:
 	void setPwd(String^);
 	void setEml(String^);
 
+	//User Functions
+	void searchCourse();
+
 	//DESTRUCTOR
 	~User();
 
@@ -33,6 +38,7 @@ private:
 	String^ lastName;
 	String^ password;
 	String^ email;
+	
 };
 
 

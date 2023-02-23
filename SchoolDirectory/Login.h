@@ -17,5 +17,6 @@ public:
 	void userLogin(String^, String^);
 	String^ checkUserType(String^);
 private:
+	
 };
 #endif

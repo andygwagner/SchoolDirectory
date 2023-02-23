@@ -21,6 +21,37 @@ void User::setlName(String^ lN) { lastName = lN; }
 void User::setEml(String^ Eml) { email = Eml; }
 void User::setPwd(String^ Pwd) { password = Pwd; }
 
+void User::searchCourse() {
+	String^ connString = "Data Source=.\\SQLEXPRESS;Initial Catalog=LeopardDatabase;Integrated Security=True";
+	CourseList tryCourseList;
+	tryCourseList.loadCourseValues(connString);
+
+	char choice;
+	int looper = 0;
+
+	while (looper == 0) {
+		Console::WriteLine("------Course Search------");
+		Console::WriteLine("a - view all courses");
+		Console::WriteLine("c - search by CRN");
+		Console::WriteLine("t - search by course name");
+		Console::WriteLine("x - back");
+		choice = Convert::ToChar(Console::ReadLine());
+		switch (choice) {
+		case 'a':
+			// print all courses to screen
+			tryCourseList.printCourseList();
+			break;
+		case 'c':
+			break;
+		case 't':
+			break;
+		case 'x':
+			looper++;
+			break;
+		}
+	}
+}
+
 //DESTRUCTOR
 User::~User()
 {}
